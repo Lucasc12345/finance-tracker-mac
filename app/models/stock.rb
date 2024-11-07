@@ -3,7 +3,7 @@ class Stock < ApplicationRecord
   def self.new_lookup(ticker_symbol)
     begin
       price = fetch_price(ticker_symbol)
-      return 0 if price == 0
+      return false if price == 0
       return nil unless price
       name = company_lookup(ticker_symbol)
       return nil unless name
