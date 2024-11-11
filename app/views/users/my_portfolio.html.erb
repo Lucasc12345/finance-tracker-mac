@@ -1,4 +1,11 @@
-<h1>My Portfolio</h1>
+<div class="row mt-3">
+  <div class="h2 col-8">My Portfolio</div>
+  <div class="col-4">
+    <%= link_to refresh_stocks_path(user: current_user), class: 'fa-2x refresh-button', method: :patch do %>
+      <%= fa_icon 'refresh' %>
+    <% end %>
+  </div>
+</div>
 
 <div class='search-area'>
   <h3>Search Stocks</h3>

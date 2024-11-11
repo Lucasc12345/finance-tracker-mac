@@ -1,5 +1,11 @@
-<h2>User Details</h2>
-
+<div class="row mt-3 mb-3">
+  <div class="h2 col-8">User Details</div>
+  <div class="col-4">
+    <%= link_to refresh_stocks_path(user: @user), class: 'fa-2x refresh-button', method: :patch do %>
+      <%= fa_icon 'refresh' %>
+    <% end %>
+  </div>
+</div>
 
 <div class="card card-header results-block">
   <table class="col-md-12">
