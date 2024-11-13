@@ -7,7 +7,7 @@ class Stock < ApplicationRecord
   validates :name, :ticker, presence: true
   def self.new_lookup(ticker_symbol)
     begin
-      response = HTTParty.get("https://financialmodelingprep.com/api/v3/quote/#{ticker_symbol}?apikey=#{Rails.application.credentials.fmp_api[:api_key]}")
+      response = HTTParty.get("https://financialmodelingprep.com/api/v3/quote/#{ticker_symbol}?apikey=#{Rails.application.credentials.dig(:fmp_api, :api_key)}")
       if response.code == 200
         name = response.parsed_response[0]['name']
         price = response.parsed_response[0]['price']
